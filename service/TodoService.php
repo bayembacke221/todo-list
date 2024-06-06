@@ -53,4 +53,17 @@ class TodoService
         return $statement->rowCount();
     }
 
+    public function searchTodo(
+        $keyword
+    )
+    {
+
+        $sql = "SELECT * FROM todos WHERE title LIKE ? OR description LIKE ?";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute(["%$keyword%", "%$keyword%"]);
+        $result = $statement->fetchAll();
+        return $result;
+
+    }
+
 }

@@ -11,11 +11,11 @@ include_once 'partials/_header.php';
 
                             <h4 class="text-center my-3 pb-3">To Do App</h4>
 
-                            <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+                            <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2" method="post" action="todo.php?page=searchTodo">
                                 <div class="col-12">
                                     <div data-mdb-input-init class="form-outline">
-                                        <input type="text" id="form1" class="form-control" />
-                                        <label class="form-label" for="form1">Enter a task here</label>
+                                        <input type="text" name="keyword" id="keyword" class="form-control" />
+                                        <label class="form-label" for="keyword">Enter a task here</label>
                                     </div>
                                 </div>
 

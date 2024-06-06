@@ -41,6 +41,9 @@ switch ($page) {
         $_id = $_GET['_id'];
         $todoController->delete($_id);
         break;
+    case 'searchTodo':
+        $todoController->searchTodo();
+        break;
     default:
         $todoController->index();
         break;

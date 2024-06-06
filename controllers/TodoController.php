@@ -54,4 +54,13 @@ class TodoController
         header('Location: todo.php');
     }
 
+    public function searchTodo()
+    {
+        $keyword = $_POST['keyword'];
+        $todos = $this->todoService->searchTodo(
+            $keyword
+        );
+        include_once 'views/todo.php';
+    }
+
 }
