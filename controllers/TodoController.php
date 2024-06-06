@@ -15,7 +15,7 @@ class TodoController
     public function index()
     {
         $todos = $this->todoService->getAll();
-        include_once 'views/index.php';
+        include_once 'views/todo.php';
     }
 
     public function create()
@@ -27,8 +27,9 @@ class TodoController
     {
         $title = $_POST['title'];
         $description = $_POST['description'];
+        echo $title;
         $this->todoService->create($title, $description);
-        header('Location: index.php');
+        header('Location: todo.php');
     }
 
     public function edit()
@@ -44,14 +45,14 @@ class TodoController
         $title = $_POST['title'];
         $description = $_POST['description'];
         $this->todoService->update($id, $title, $description);
-        header('Location: index.php');
+        header('Location: todo.php');
     }
 
     public function delete()
     {
         $id = $_GET['id'];
         $this->todoService->delete($id);
-        header('Location: index.php');
+        header('Location: todo.php');
     }
 
 }

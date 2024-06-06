@@ -21,8 +21,9 @@ $todoService = new TodoService($connection);
 $todoController = new TodoController($todoService);
 
 $page = isset($_GET['page']) ? $_GET['page'] : null;
+$_id = isset($_GET['_id']) ? $_GET['_id'] : null;
 
-switch ($page) {
+switch ($page || $_id) {
     case 'create':
         $todoController->create();
         break;
@@ -30,6 +31,7 @@ switch ($page) {
         $todoController->store();
         break;
     case 'edit':
+        $_id = $_GET['_id'];
         $todoController->edit();
         break;
     case 'update':
