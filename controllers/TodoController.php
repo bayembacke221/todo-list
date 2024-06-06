@@ -32,10 +32,9 @@ class TodoController
         header('Location: todo.php');
     }
 
-    public function edit()
+    public function edit($_id)
     {
-        $id = $_GET['id'];
-        $todo = $this->todoService->getById($id);
+        $todo = $this->todoService->getById($_id);
         include_once 'views/edit.php';
     }
 
@@ -44,7 +43,8 @@ class TodoController
         $id = $_POST['id'];
         $title = $_POST['title'];
         $description = $_POST['description'];
-        $this->todoService->update($id, $title, $description);
+        $status = $_POST['status'];
+        $this->todoService->update($id, $title, $description, $status);
         header('Location: todo.php');
     }
 

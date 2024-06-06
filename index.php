@@ -23,7 +23,7 @@ $todoController = new TodoController($todoService);
 $page = isset($_GET['page']) ? $_GET['page'] : null;
 $_id = isset($_GET['_id']) ? $_GET['_id'] : null;
 
-switch ($page || $_id) {
+switch ($page) {
     case 'create':
         $todoController->create();
         break;
@@ -32,7 +32,7 @@ switch ($page || $_id) {
         break;
     case 'edit':
         $_id = $_GET['_id'];
-        $todoController->edit();
+        $todoController->edit($_id);
         break;
     case 'update':
         $todoController->update();

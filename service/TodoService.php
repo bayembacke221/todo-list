@@ -37,11 +37,11 @@ class TodoService
         return $statement->rowCount();
     }
 
-    public function update($id, $title, $description)
+    public function update($id, $title, $description,$status)
     {
-        $sql = "UPDATE todos SET title = ?, description = ? WHERE id = ?";
+        $sql = "UPDATE todos SET title = ?, description = ?,status=? WHERE id = ?";
         $statement = $this->connection->prepare($sql);
-        $statement->execute([$title, $description, $id]);
+        $statement->execute([$title, $description,$status, $id]);
         return $statement->rowCount();
     }
 

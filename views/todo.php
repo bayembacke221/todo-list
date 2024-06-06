@@ -63,8 +63,8 @@ include_once 'partials/_header.php';
                                         }
                                     ?>
                                     <td>
-                                        <a type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" href="../index.php?page=delete&_id=<?=$todo['id']?>">Delete</a>
-                                        <a type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success ms-1" href="../index.php?page=edit&_id=<?=$todo['id']?>">Update</a>
+                                        <a type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" href="index.php?page=delete&_id=<?=$todo['id']?>"><i class="fa-solid fa-trash"></i> </a>
+                                        <a type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success ms-1" href="index.php?page=edit&_id=<?=$todo['id']?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                     </td>
                                 </tr>
                                 <?php
