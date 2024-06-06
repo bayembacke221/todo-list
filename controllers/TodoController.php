@@ -48,10 +48,9 @@ class TodoController
         header('Location: todo.php');
     }
 
-    public function delete()
+    public function delete($_id)
     {
-        $id = $_GET['id'];
-        $this->todoService->delete($id);
+        $this->todoService->delete($_id);
         header('Location: todo.php');
     }
 

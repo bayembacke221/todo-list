@@ -38,7 +38,8 @@ switch ($page) {
         $todoController->update();
         break;
     case 'delete':
-        $todoController->delete();
+        $_id = $_GET['_id'];
+        $todoController->delete($_id);
         break;
     default:
         $todoController->index();
